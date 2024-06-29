@@ -141,7 +141,7 @@ Hard resetting via RTS pin...
 - Restart the switch from the main menu. This will load the touch driver, enabling it to recognize touch events.
 - Caution: Ensure you do not touch any high-power components such as the exposed screws form the screw-terminals. Especually if the device is in a test setup on your desk, consider using insulation tape to cover any exposed conductive parts.
 
-![powered-switch](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/3729d304-0405-43b0-b605-8c43f47faaba)
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/3729d304-0405-43b0-b605-8c43f47faaba" alt="powered-switch" width="50%" height="50%">
 
 - To verify the touch driver works, navigate to *Tools* → *Console* and touch the switch. Observe the RESULT topic in the log for confirmation.
 
