@@ -48,6 +48,21 @@ Hard resetting via RTS pin...
 ```
 
 ## Backup time
-- With the help of my lovely wife I could easily plug in the UART-TTL USB adapter while holding a cable connected from the *GROUND PIN* to the *BOOT* solder point (pin wire). The switch is now in *boot mode*. So we can run the following terminal command:
+- With the help of my lovely wife ❤️ I could easily plug in the UART-TTL USB adapter while holding a cable connected from the *GROUND PIN* to the *BOOT* solder point (pink wire). The switch is now in *boot mode*. So we can run the following terminal command:
 - `esptool.py --port /dev/cu.usbserial-1440 read_flash 0x00000 0x800000 ~/Desktop/image8M.bin`
 - This took a couple of minutes but provided a nice firmware backup file I renamed properly afterwards: [sonoff-tx-ultimate-t5-3c-86-original-firmware-2024-06-28.bin](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/blob/77f11c4167d40285a734aea873aa7d6982a4bdea/sonoff-tx-ultimate-t5-3c-86-original-firmware-2024-06-28.bin)
+- Note: You can relieve the cramp in (your?) third hand a little by removing the pink wire once the reading has started and you are sure everything works.
+
+## Flashing
+- I decided to use the web installer route for installing tasmota so I did not have to download the proper firmware from a selection of 100s of variations and get URLs, files, paths and stuff right. The [web installer](https://tasmota.github.io/docs/Getting-Started/#flashing) does all that for me.
+- First I unplugged the USB adapter again, reapplied the pink wire (thanks again, ❤️) and plugged the USB adapter in again.
+- Then I flashed the firmware by following the nicely guided web assistant.
+![Screenshot 2024-06-29 at 09 40 36](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54)
+![Screenshot 2024-06-29 at 09 42 25](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/2c0ea299-cdb0-4244-89c2-2a937672728c)
+![Screenshot 2024-06-29 at 09 42 00](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/f03162a9-0642-406e-9844-ca80a185c276)
+![Screenshot 2024-06-29 at 09 41 50](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7c9cdcfc-c284-40ee-97c6-0abf647ff872)
+![Screenshot 2024-06-29 at 09 41 42](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/e63534fb-d8ba-4c71-90b9-8701d555d326)
+![Screenshot 2024-06-29 at 09 41 25](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/732a790d-8e36-4761-baa8-5ae720f36dd3)
+
+
+  
