@@ -58,21 +58,45 @@ Hard resetting via RTS pin...
 - First I unplugged the USB adapter again, reapplied the pink wire (thanks again, ❤️) and plugged the USB adapter in again.
 - Then I flashed the firmware by following the nicely guided web assistant.
 
-<div style="text-align:left;">
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 40 36">
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 40 36">
 
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/732a790d-8e36-4761-baa8-5ae720f36dd3" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 41 25">
+---
 
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/e63534fb-d8ba-4c71-90b9-8701d555d326" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 41 42">
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/732a790d-8e36-4761-baa8-5ae720f36dd3" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 25">
 
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7c9cdcfc-c284-40ee-97c6-0abf647ff872" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 41 50">
+---
 
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/f03162a9-0642-406e-9844-ca80a185c276" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 42 00">
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/e63534fb-d8ba-4c71-90b9-8701d555d326" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 42">
 
-  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/2c0ea299-cdb0-4244-89c2-2a937672728c" width="50%" style="border:1px solid #444; margin-bottom:20px;" alt="Screenshot 2024-06-29 at 09 42 25">
-</div>
+---
+
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7c9cdcfc-c284-40ee-97c6-0abf647ff872" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 50">
+
+---
+
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/f03162a9-0642-406e-9844-ca80a185c276" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 42 00">
+
+---
+
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/2c0ea299-cdb0-4244-89c2-2a937672728c" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 42 25">
 
 ## First contact
-- Tasmota then is installed and creates a WiFi to connect with.
-- Connect to this tasmota-* WiFi (there are plenty of guides for that online so not covered here) and go to a web browser if one does not pop up automatically (it should) and (in my case) go to 192.168.4.1.
-- You are asked to enter SSID for your home network.
+- After flashing Tasmota, we want to connect the switch to your home network
+- The device will create its own WiFi access point named "tasmota-XXXXXX" where XXXXXX is a unique identifier. Connect to this "tasmota-XXXXXX" network
+- Once connected, you should automatically be redirected you to the Tasmota configuration page (usually at http://192.168.4.1). If not, open a web browser and navigate to this address manually.
+- On the configuration page, you'll see a "Configure WiFi" section. Enter the SSID and the password for your home WiFi in the second field. Click "Save" to apply these settings.
+- The switch will restart and attempt to connect to your home network. If successful, the switch will disappear from the available WiFi networks list. If not, it will revert to Access Point mode after a few minutes, allowing you to try the configuration process again.
+- To find your switch on your home network you need it's IP. Check your router's connected devices list for a new device i.e. the switch named something with "tasmota". For that I use [LanScan](https://apps.apple.com/at/app/lanscan/id472226235%3Fmt%3D12&ved=2ahUKEwj5w8bAtoCHAxWU_rsIHdewCL8QFnoECBcQAQ&usg=AOvVaw0Vp6argRF1d_gV34Q1D5t9), a network scanner app.
+- Enter it into a web browser to access the Tasmota web interface.
+
+## Configuring the switch
+- From the webinterface select *Configure* → *Configure Other*. This brings you to this screen:
+![TXU02 - Configure Other](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7d73b4b9-e472-4dda-a6bf-91805a30525f)
+- The line of text below "Template" will look different when installing tasmoata for the first time. Here we need to enter the proper template string.
+  - Get it from this website [templates.blakadder.com](https://templates.blakadder.com/sonoff_T5-3C-86.html)
+  - Be sure to select the proper model 1/2/3/4-Gang as well as US or EU versions. Just use the search function in the menu and enter `Sonoff TX Ultimate T5` to see all models.
+  - Copy the string provided in the Details page below the text _Configuration for ESP32_
+  - For my switch model (sonoff-tx-ultimate-t5-3c-86) it is: `{"NAME":"TX Ultimate 3","GPIO":[0,0,7808,0,7840,3872,0,0,0,1376,0,7776,0,225,224,3232,0,480,3200,0,0,0,3840,226,0,0,0,0,0,0,0,0,0,0,0,0],"FLAG":0,"BASE":1,"CMND":"Backlog Pixels 28"}`
+- Enter the string in the edit field where it says _Template_
+- Choose names that help you identify all parts of the switch later: _Device Name_ for the Switch and the _Friendly Names_ for the relays. In my case 1-3 are the actual relays and friendly name 4 is a virtual switch for the leds around the switch.
+
