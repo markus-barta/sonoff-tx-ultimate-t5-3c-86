@@ -48,7 +48,4 @@ Hard resetting via RTS pin...
 
 ## Backup time
 - With the help of my lovely wife I could easily plug in the UART-TTL USB adapter while holding a cable connected from the *ground pin* to the *BOOT* solder point (pin wire). The switch is now in *boot mode*.
-- Running `esptool.py --port /dev/cu.usbserial-1440 read_flash 0x00000 0x800000 ~/Desktop/image8M.bin` takes some time but provided a nice firmware backup file:
-
-file
-
+- Running `esptool.py --port /dev/cu.usbserial-1440 read_flash 0x00000 0x800000 ~/Desktop/image8M.bin` takes some time but provided a nice firmware backup file I renamed properly afterwards: [sonoff-tx-ultimate-t5-3c-86-original-firmware-2024-06-28.bin](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/blob/77f11c4167d40285a734aea873aa7d6982a4bdea/sonoff-tx-ultimate-t5-3c-86-original-firmware-2024-06-28.bin)
