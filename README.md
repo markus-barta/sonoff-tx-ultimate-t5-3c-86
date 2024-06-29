@@ -143,5 +143,18 @@ Hard resetting via RTS pin...
 
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/3729d304-0405-43b0-b605-8c43f47faaba" alt="powered-switch" width="50%" height="50%">
 
-- To verify the touch driver works, navigate to *Tools* → *Console* and touch the switch. Observe the RESULT topic in the log for confirmation.
+- To verify the touch driver works, navigate to *Tools* → *Console* and touch the switch. Observe the RESULT topic in the log for confirmation. You should find log-lines like this:
+```
+11:21:19.216 Touch event: 0 pos: 1
+11:21:19.314 bytes('AA5501020101BF04')
+11:21:19.316 Short press zone: 1
+11:21:25.364 bytes('AA55010202000568F0')
+11:21:25.366 Touch event: 0 pos: 5
+11:21:25.414 bytes('AA5501020105FF80')
+11:21:25.416 Short press zone: 5
+11:21:29.314 bytes('AA55010202000A991F')
+11:21:29.316 Touch event: 0 pos: 10
+11:21:29.414 bytes('AA550102010A0E6F')
+11:21:29.416 Short press zone: 10
+```
 
