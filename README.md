@@ -19,7 +19,7 @@ Step by step guide to use the switch in a WiFi + MQTT + Node-RED + Apple Home (H
 - Install esptools in terminal with `brew install esptool`
 - Connect wires like explained here by [chris2172](https://github.com/chris2172/Sonoff-TX-Ultimate-T5-Switch)
 
-img
+![img](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/blob/29abb2d71adfa2501f2e4c16085870247325c54d/wire1.jpg)
 
 ### Chip info
 - I wanted to backup the firmware provided on the switch. I found a guide for this [here at hobbytronics.pk](https://hobbytronics.pk/sonoff-original-firmware-backup-restore/#google_vignette), but for older switches (with 1MB/4MB firmware). So needed a way to find out the proper size of the T5 firmware. Thanks to Claude 3.5 I came up with this chip-info command:
