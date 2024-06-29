@@ -108,7 +108,7 @@ Hard resetting via RTS pin...
 
 ## Basic Switch Configuration
 - From the web interface, select *Configure* → *Configure Other*. This brings you to this screen:
-![TXU02 - Configure Other](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7d73b4b9-e472-4dda-a6bf-91805a30525f)
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7d73b4b9-e472-4dda-a6bf-91805a30525f" width="50%" height="50%" alt="TXU02 - Configure Other">
 - The line of text below "Template" will look different when installing Tasmota for the first time. Here we need to enter the proper template string.
   - Get it from this website: [templates.blakadder.com](https://templates.blakadder.com/sonoff_T5-3C-86.html)
   - Be sure to select the proper model (1/2/3/4-Gang) as well as US or EU versions. Just use the search function in the menu and enter `Sonoff TX Ultimate T5` to see all models.
@@ -118,18 +118,18 @@ Hard resetting via RTS pin...
 - Choose names that help you identify all parts of the switch later: *Device Name* for the switch and the *Friendly Names* for the relays. In my case, 1-3 are the actual relays and friendly name 4 is a virtual switch for the LEDs around the switch.
 - Click the *Save* button and the switch will reboot. This will provide the following web interface where you can play around a bit with the color sliders for the LEDs and hear the relays when you click the *Toggle* buttons.
 - Note: A physical interaction with the switch (i.e., touching it) will not do anything yet!
-![TXU02 - Main Menu](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/97b0c81b-d96f-47d0-9cf0-d8613b3b52e0)
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/97b0c81b-d96f-47d0-9cf0-d8613b3b52e0" width="50%" height="50%" alt="TXU02 - Main Menu">
 
 ## Advanced configuration
-- To get touch, haptics and sound to behave like in the stock firmware we have a lot to do. First lets enable touch, thanks to [blakadder.com](https://templates.blakadder.com/sonoff_T5-1C-86) for the original guide and the files.
+- To get touch, haptics and sound to behave like in the stock firmware we have a lot to do. First, let's enable touch, thanks to [blakadder.com](https://templates.blakadder.com/sonoff_T5-1C-86) for the original guide and the files.
 - Download the touch driver file [txultimate.be](https://raw.githubusercontent.com/blakadder/tx-ultimate/main/txultimate.be)
-- In the tasmota web interface navigate to *Tools* → *Manage File system*
+- In the Tasmota web interface navigate to *Tools* → *Manage File system*
 - Upload the file to the switch by selecting *Choose file* then select the previous downloaded txultimate.be, finally click *Start Upload*. You will then see the file in the list below the *Upload* button.
-- The touch driver needs to load on startup.
+- The touch driver needs to be loaded on startup.
   - So select *Create and edit new file*.
-  - In the *File* edit box entere the text `/autoexec.be`.
+  - In the *File* edit box enter the text `/autoexec.be`.
   - In the edit area below delete the prefilled text (newfile.txt) enter `load("txultimate.be")` instead. It should look like this:
-  ![TXU02 - Edit File](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/824bd593-6e3d-41b3-87ff-0b79a57bd255)
-  - Select _Save_. This is how all should look like:
-  ![TXU02 - Manage File system](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/5ac0b4af-6afb-4e02-b3ba-bb73c421ea24)
-- Restart the switch in the main menu. The touch driver will load and recognize touch events. You can see it in the RESULT topic in the log ()
+  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/824bd593-6e3d-41b3-87ff-0b79a57bd255" width="50%" height="50%" alt="TXU02 - Edit File">
+  - Select *Save*. This is how it should all look:
+  <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/5ac0b4af-6afb-4e02-b3ba-bb73c421ea24" width="50%" height="50%" alt="TXU02 - Manage File system">
+- Restart the switch in the main menu. The touch driver will load and recognize touch events. You can see it in the RESULT topic in the log.
