@@ -108,7 +108,9 @@ Hard resetting via RTS pin...
 
 ## Basic Switch Configuration
 - From the web interface, select *Configure* → *Configure Other*. This brings you to this screen:
+
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7d73b4b9-e472-4dda-a6bf-91805a30525f" width="50%" height="50%" alt="TXU02 - Configure Other">
+
 - The line of text below "Template" will look different when installing Tasmota for the first time. Here we need to enter the proper template string.
   - Get it from this website: [templates.blakadder.com](https://templates.blakadder.com/sonoff_T5-3C-86.html)
   - Be sure to select the proper model (1/2/3/4-Gang) as well as US or EU versions. Just use the search function in the menu and enter `Sonoff TX Ultimate T5` to see all models.
@@ -129,7 +131,17 @@ Hard resetting via RTS pin...
   - So select *Create and edit new file*.
   - In the *File* edit box enter the text `/autoexec.be`.
   - In the edit area below delete the prefilled text (newfile.txt) enter `load("txultimate.be")` instead. It should look like this:
+
   <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/824bd593-6e3d-41b3-87ff-0b79a57bd255" width="50%" height="50%" alt="TXU02 - Edit File">
-  - Select *Save*. This is how it should all look:
+  
+  - Select *Save*. This is how it should all look like:
+   
   <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/5ac0b4af-6afb-4e02-b3ba-bb73c421ea24" width="50%" height="50%" alt="TXU02 - Manage File system">
-- Restart the switch in the main menu. The touch driver will load and recognize touch events. You can see it in the RESULT topic in the log.
+  
+- Restart the switch from the main menu. This will load the touch driver, enabling it to recognize touch events.
+- Caution: Ensure you do not touch any high-power components such as the exposed screws form the screw-terminals. Especually if the device is in a test setup on your desk, consider using insulation tape to cover any exposed conductive parts.
+
+![powered-switch](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/3729d304-0405-43b0-b605-8c43f47faaba)
+
+- To verify the touch driver works, navigate to *Tools* → *Console* and touch the switch. Observe the RESULT topic in the log for confirmation.
+
