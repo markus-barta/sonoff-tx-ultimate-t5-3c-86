@@ -73,14 +73,19 @@ Hard resetting via RTS pin...
 - Then I flashed the firmware by following the nicely guided web assistant.
 
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 40 36" onclick="window.open(this.src, '_blank');">
+
 ---
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/732a790d-8e36-4761-baa8-5ae720f36dd3" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 41 25" onclick="window.open(this.src, '_blank');">
+
 ---
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/e63534fb-d8ba-4c71-90b9-8701d555d326" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 41 42" onclick="window.open(this.src, '_blank');">
+
 ---
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7c9cdcfc-c284-40ee-97c6-0abf647ff872" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 41 50" onclick="window.open(this.src, '_blank');">
+
 ---
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/f03162a9-0642-406e-9844-ca80a185c276" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 42 00" onclick="window.open(this.src, '_blank');">
+
 ---
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/2c0ea299-cdb0-4244-89c2-2a937672728c" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 42 25" onclick="window.open(this.src, '_blank');">
 
