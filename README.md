@@ -72,32 +72,20 @@ Hard resetting via RTS pin...
 - I decided to use the web installer route for installing tasmota so I did not have to download the proper firmware from a selection of 100s of variations and get URLs, files, paths and stuff right. The [web installer](https://tasmota.github.io/docs/Getting-Started/#flashing) does all that for me.
 - First I unplugged the USB adapter again, reapplied the pink wire (thanks again, ❤️) and plugged the USB adapter in again.
 - Then I flashed the firmware by following the nicely guided web assistant.
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 40 36">
-
 ---
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/732a790d-8e36-4761-baa8-5ae720f36dd3" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 25">
-
 ---
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/e63534fb-d8ba-4c71-90b9-8701d555d326" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 42">
-
 ---
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7c9cdcfc-c284-40ee-97c6-0abf647ff872" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 41 50">
-
 ---
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/f03162a9-0642-406e-9844-ca80a185c276" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 42 00">
-
 ---
-
 <img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/2c0ea299-cdb0-4244-89c2-2a937672728c" width="50%" height="50%" alt="Screenshot 2024-06-29 at 09 42 25">
 
 ## First contact
 - After flashing Tasmota, we want to connect the switch to your home network
-- Unplug all 
 - The device will create its own WiFi access point named "tasmota-XXXXXX" where XXXXXX is a unique identifier. Connect to this "tasmota-XXXXXX" network
 - Once connected, you should automatically be redirected you to the Tasmota configuration page (usually at http://192.168.4.1). If not, open a web browser and navigate to this address manually.
 - On the configuration page, you'll see a "Configure WiFi" section. Enter the SSID and the password for your home WiFi in the second field. Click "Save" to apply these settings.
@@ -105,23 +93,43 @@ Hard resetting via RTS pin...
 - To find your switch on your home network you need it's IP. Check your router's connected devices list for a new device i.e. the switch named something with "tasmota". For that I use [LanScan](https://apps.apple.com/at/app/lanscan/id472226235%3Fmt%3D12&ved=2ahUKEwj5w8bAtoCHAxWU_rsIHdewCL8QFnoECBcQAQ&usg=AOvVaw0Vp6argRF1d_gV34Q1D5t9), a network scanner app.
 - Enter it into a web browser to access the Tasmota web interface.
 
-## Basic switch configuration
-- From the webinterface select *Configure* → *Configure Other*. This brings you to this screen:
+## Reassembly
+- At this point, you have two options:
+  1. Reassemble and connect to mains power:
+     - Unplug the USB adapter and disconnect all wires.
+     - Carefully reassemble the switch.
+     - Connect the reassembled switch to mains power.
+     - This approach allows for a more realistic setup during configuration.
+  2. Continue with an "open" configuration:
+     - Keep the logic board exposed.
+     - Proceed with the configuration process while the device remains disassembled.
+     - Choose this if you want to make further modifications to the firmware, i.e. go back to the stock firmware.
+- For this guide, we'll proceed with the reassembled switch connected to mains power.
+
+## Basic Switch Configuration
+- From the web interface, select *Configure* → *Configure Other*. This brings you to this screen:
 ![TXU02 - Configure Other](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/7d73b4b9-e472-4dda-a6bf-91805a30525f)
-- The line of text below "Template" will look different when installing tasmoata for the first time. Here we need to enter the proper template string.
-  - Get it from this website [templates.blakadder.com](https://templates.blakadder.com/sonoff_T5-3C-86.html)
-  - Be sure to select the proper model 1/2/3/4-Gang as well as US or EU versions. Just use the search function in the menu and enter `Sonoff TX Ultimate T5` to see all models.
-  - Copy the string provided in the Details page below the text _Configuration for ESP32_
+- The line of text below "Template" will look different when installing Tasmota for the first time. Here we need to enter the proper template string.
+  - Get it from this website: [templates.blakadder.com](https://templates.blakadder.com/sonoff_T5-3C-86.html)
+  - Be sure to select the proper model (1/2/3/4-Gang) as well as US or EU versions. Just use the search function in the menu and enter `Sonoff TX Ultimate T5` to see all models.
+  - Copy the string provided in the Details page below the text *Configuration for ESP32*
   - For my switch model (sonoff-tx-ultimate-t5-3c-86) it is: `{"NAME":"TX Ultimate 3","GPIO":[0,0,7808,0,7840,3872,0,0,0,1376,0,7776,0,225,224,3232,0,480,3200,0,0,0,3840,226,0,0,0,0,0,0,0,0,0,0,0,0],"FLAG":0,"BASE":1,"CMND":"Backlog Pixels 28"}`
-- Enter the string in the edit field where it says _Template_
-- Choose names that help you identify all parts of the switch later: _Device Name_ for the Switch and the _Friendly Names_ for the relays. In my case 1-3 are the actual relays and friendly name 4 is a virtual switch for the leds around the switch.
-- Click the _Save_ button and the switch will reboot. This will provide the following webinterface where you can play around a bit with the color sliders for the leds and hear the relays when you click the _Toggle_ buttons.
-- Note: A physical interaction with the switch (i.e. touching it) will not do anyting yet!
+- Enter the string in the edit field where it says *Template*
+- Choose names that help you identify all parts of the switch later: *Device Name* for the switch and the *Friendly Names* for the relays. In my case, 1-3 are the actual relays and friendly name 4 is a virtual switch for the LEDs around the switch.
+- Click the *Save* button and the switch will reboot. This will provide the following web interface where you can play around a bit with the color sliders for the LEDs and hear the relays when you click the *Toggle* buttons.
+- Note: A physical interaction with the switch (i.e., touching it) will not do anything yet!
 ![TXU02 - Main Menu](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/97b0c81b-d96f-47d0-9cf0-d8613b3b52e0)
 
 ## Advanced configuration
-- Download the TX Ultimate driver file txultimate.be.
-- Navigate to Consoles
-- Manage File system in the web UI. Upload the driver to TX Ultimate with “Choose file” followed by “Start Upload”.
-- To load the driver on startup select Create and edit new file named autoexec.be with a line load("txultimate.be"). Alternatively you can rename txultimate.be to autoexec.be
-- Driver is just recognising touch events for now and reports them to the RESULT topic.
+- To get touch, haptics and sound to behave like in the stock firmware we have a lot to do. First lets enable touch, thanks to [blakadder.com](https://templates.blakadder.com/sonoff_T5-1C-86) for the original guide and the files.
+- Download the touch driver file [txultimate.be](https://raw.githubusercontent.com/blakadder/tx-ultimate/main/txultimate.be)
+- In the tasmota web interface navigate to *Tools* → *Manage File system*
+- Upload the file to the switch by selecting *Choose file* then select the previous downloaded txultimate.be, finally click *Start Upload*. You will then see the file in the list below the *Upload* button.
+- The touch driver needs to load on startup.
+  - So select *Create and edit new file*.
+  - In the *File* edit box entere the text `/autoexec.be`.
+  - In the edit area below delete the prefilled text (newfile.txt) enter `load("txultimate.be")` instead. It should look like this:
+  ![TXU02 - Edit File](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/824bd593-6e3d-41b3-87ff-0b79a57bd255)
+  - Select _Save_. This is how all should look like:
+  ![TXU02 - Manage File system](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/5ac0b4af-6afb-4e02-b3ba-bb73c421ea24)
+- Restart the switch in the main menu. The touch driver will load and recognize touch events. You can see it in the RESULT topic in the log ()
