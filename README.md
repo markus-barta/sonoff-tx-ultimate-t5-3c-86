@@ -34,8 +34,10 @@ Step by step guide to use the switch in a WiFi + MQTT + Node-RED + Apple Home (H
      b. Gently lift the cover to expose the logic board.
 - Connect the wires to your _UART-TTL USB Adapter_ like explained here by [chris2172](https://github.com/chris2172/Sonoff-TX-Ultimate-T5-Switch)
 
-![img](https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/blob/29abb2d71adfa2501f2e4c16085870247325c54d/wire1.jpg)
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/blob/29abb2d71adfa2501f2e4c16085870247325c54d/wire1.jpg" width="25%" height="25%" alt="wire1.jpg" onclick="window.open(this.src, '_blank');">
 
+
+<img src="https://github.com/markus-barta/sonoff-tx-ultimate-t5-3c-86/assets/276789/389aa5e5-7ad8-4945-82d8-d51c56b7ad54" width="25%" height="25%" alt="Screenshot 2024-06-29 at 09 40 36" onclick="window.open(this.src, '_blank');">
 
 ### Chip info
 - I wanted to backup the firmware provided on the switch. I found a guide for this [here at hobbytronics.pk](https://hobbytronics.pk/sonoff-original-firmware-backup-restore/#google_vignette), but for older switches (with 1MB/4MB firmware). So needed a way to find out the proper size of the T5 firmware. Thanks to Claude 3.5 I came up with this chip-info command:
@@ -157,4 +159,5 @@ Hard resetting via RTS pin...
 11:21:29.414 bytes('AA550102010A0E6F')
 11:21:29.416 Short press zone: 10
 ```
-
+- There are events firing based on where, how and how long you touch the switch. e.g. pos 1 is the left switch, pos 5 the middle one and pos 10 the right one.
+- Again, note that there are no "default" actions set in the firmware/config (yet). So touching only results in events in the log, no sound, no light, no haptics, no relay that changes.
